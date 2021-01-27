@@ -46,7 +46,7 @@ void ledAlerter()
 
 }
 
-check_and_alert(maxThreshold, alerters, computedStats)
+void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
   struct Stats m;
   if (m.max > maxThreshold)
