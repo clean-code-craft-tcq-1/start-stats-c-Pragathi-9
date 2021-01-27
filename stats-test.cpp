@@ -26,11 +26,10 @@ TEST_CASE("reports average, minimum and maximum")
     
     //Design the REQUIRE statement here.
     //Use https://stackoverflow.com/questions/1923837/how-to-use-nan-and-inf-in-c
-}
+}*/
 
 TEST_CASE("raises alerts when max is greater than threshold") {
-    // create additional .c and .h files
-    // containing the emailAlerter, ledAlerter functions
+    
     alerter_funcptr alerters[] = {emailAlerter, ledAlerter};
 
     float numberset[] = {99.8, 34.2, 4.5};
@@ -40,8 +39,6 @@ TEST_CASE("raises alerts when max is greater than threshold") {
     const float maxThreshold = 10.2;
     check_and_alert(maxThreshold, alerters, computedStats);
 
-    // need a way to check if both emailAlerter, ledAlerter were called
-    // you can define call-counters along with the functions, as shown below
     REQUIRE(emailAlertCallCount == 1);
     REQUIRE(ledAlertCallCount == 1);
-}*/
+}
