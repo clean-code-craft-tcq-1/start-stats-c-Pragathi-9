@@ -32,29 +32,34 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     return s;
 }
 
+
 int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
 
-void emailAlerter()
+int emailAlerter(int emailAlertCallCount)
 {
   printf("Email Alert: Maximum value greater than threshold");
+ 
+  return( ++emailAlertCallCount);
   
 }
-void ledAlerter()
+int ledAlerter(int ledAlertCallCount)
 {
   printf("LED glow Alert: Maximum value greater than threshold");
-
+  return(++ledAlertCallCount);
 }
 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
-  struct Stats m;
-  if (m.max > maxThreshold)
+  emailAlertCallCount = 0;
+  ledAlertCallCount = 0;
+ 
+  if (computedStats.max > maxThreshold)
   {
-	alerters[0];
-	emailAlertCallCount++;
-	alerters[1];
-	ledAlertCallCount++;
+	emailAlertCallCount=alerters[0](emailAlertCallCount);
+	
+	ledAlertCallCount=alerters[1](ledAlertCallCount);
+	
   }
 	
 }
