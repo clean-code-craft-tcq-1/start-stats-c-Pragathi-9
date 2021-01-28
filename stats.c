@@ -52,9 +52,9 @@ void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stat
   if (m.max > maxThreshold)
   {
 	alerters[0];
-	emailAlertCallCount++;
+	++emailAlertCallCount;
 	alerters[1];
-	ledAlertCallCount++;
+	++ledAlertCallCount;
   }
 	
 }
