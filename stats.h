@@ -8,8 +8,8 @@ struct Stats
 struct Stats compute_statistics(const float* numberset, int setlength);
 
 typedef int (*alerter_funcptr)();
-int emailAlerter(int emailAlertCallCount);
-int ledAlerter(int ledAlertCallCount);
+int emailAlerter(int);
+int ledAlerter(int);
 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats);
 
