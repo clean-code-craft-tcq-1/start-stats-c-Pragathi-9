@@ -36,16 +36,17 @@ int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
 
 
-void emailAlerter()
+int emailAlerter()
 {
   printf("Email Alert: Maximum value greater than threshold");
-  ++emailAlertCallCount;
+ 
+  return( ++emailAlertCallCount);
   
 }
-void ledAlerter()
+int ledAlerter()
 {
   printf("LED glow Alert: Maximum value greater than threshold");
-  ++ledAlertCallCount;
+  return(++ledAlertCallCount);
 }
 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
