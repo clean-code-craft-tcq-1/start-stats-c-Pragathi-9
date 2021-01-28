@@ -7,7 +7,7 @@ struct Stats
 
 struct Stats compute_statistics(const float* numberset, int setlength);
 
-typedef int (*alerter_funcptr)();
+typedef int (*alerter_funcptr)(int);
 int emailAlerter(int);
 int ledAlerter(int);
 
